@@ -5,12 +5,12 @@
 				<div class="sys-name mb-7 flex justify-center content-center">
 					<img class="logo-img mr-1.5" src="@/assets/logo.png" alt="" />spring-boot-plus管理后台
 				</div>
-				<el-form ref="ruleFormRef" :model="ruleForm" :rules="rules">
+				<el-form ref="ruleFormRef" :model="ruleForm" :rules="rules" >
 					<el-form-item class="mb-6" prop="username">
-						<el-input style="width: 300px" :prefix-icon="User" clearable v-model="ruleForm.username" placeholder="请输入用户名" />
+						<el-input style="width: 300px" :prefix-icon="User" clearable v-model="ruleForm.username" placeholder="请输入用户名" @keyup.enter="login" />
 					</el-form-item>
 					<el-form-item class="mb-6" prop="password">
-						<el-input :prefix-icon="Lock" show-password clearable v-model="ruleForm.password" placeholder="请输入密码" />
+						<el-input :prefix-icon="Lock" show-password clearable v-model="ruleForm.password" placeholder="请输入密码" @keyup.enter="login" />
 					</el-form-item>
 					<el-button size="large" type="primary" round @click="login">登录</el-button>
 				</el-form>
@@ -31,7 +31,7 @@ const router = useRouter();
 
 const ruleForm = reactive({
 	username: 'admin',
-	password: 'boot666',
+	password: '123456',
 	// password: '123456',
 });
 const rules = reactive({
